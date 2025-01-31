@@ -1,7 +1,5 @@
 package ru.kata.spring.boot_security.demo.models;
 
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
