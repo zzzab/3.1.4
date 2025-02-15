@@ -9,7 +9,7 @@ function loadUser() {
         .then(user => {
             const navUserInfo = document.getElementById('nav-user-info');
 
-            const userRoles = user.role.map(role => role.name.substring(5)).join(', ');
+            const userRoles = user.roles.map(role => role.name.substring(5)).join(', ');
             navUserInfo.textContent = `${user.name} with roles: ${userRoles}`;
 
             const tableBody = document.getElementById('user-table-body');

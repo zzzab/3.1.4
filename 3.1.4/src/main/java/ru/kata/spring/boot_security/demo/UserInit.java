@@ -1,6 +1,6 @@
 package ru.kata.spring.boot_security.demo;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 import ru.kata.spring.boot_security.demo.models.Role;
@@ -11,15 +11,11 @@ import ru.kata.spring.boot_security.demo.repositories.UserRepository;
 import javax.annotation.PostConstruct;
 import java.util.*;
 
+@AllArgsConstructor
 @Component
 public class UserInit {
-
-    @Autowired
     private UserRepository userRepository;
-
-    @Autowired
     private BCryptPasswordEncoder passwordEncoder;
-    @Autowired
     private RoleRepository roleRepository;
 
     @PostConstruct

@@ -17,7 +17,7 @@ function loadUser() {
         .then(user => {
             const navUserInfo = document.getElementById('nav-user-info');
 
-            const userRoles = user.role.map(role => role.name.substring(5)).join(', ');
+            const userRoles = user.roles.map(role => role.name.substring(5)).join(', ');
             navUserInfo.textContent = `${user.name} with roles: ${userRoles}`;
 
             const tableBody = document.getElementById('user-table');
@@ -45,7 +45,7 @@ function loadAllUsers() {
             allUsersTable.innerHTML = '';
 
             data.forEach(user => {
-                const usersRoles = user.role.map(role => role.name.substring(5)).join(', ');
+                const usersRoles = user.roles.map(role => role.name.substring(5)).join(', ');
 
                 allUsersTable.innerHTML += `
                     <tr>
@@ -72,7 +72,7 @@ function addUser() {
         .map(option => ({ name: option.value }));
 
     const userObject = {
-        username: document.getElementById('inputFirstName1').value,
+        name: document.getElementById('inputFirstName1').value,
         surname: document.getElementById('inputLastName1').value,
         age: document.getElementById('inputAge1').value,
         email: document.getElementById('inputEmail1').value,
